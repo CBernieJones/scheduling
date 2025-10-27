@@ -1,8 +1,6 @@
 package api
 
 import (
-	"fmt"
-
 	routes "github.com/CBernieJones/scheduling/src/api/routes"
 	config "github.com/CBernieJones/scheduling/src/config"
 	db "github.com/CBernieJones/scheduling/src/db"
@@ -15,6 +13,5 @@ func Run() error {
 
 	router := gin.Default()
 	routes.RegisterRoutes(router)
-	fmt.Println(config.Port())
 	return router.Run(config.Port())
 }
