@@ -6,21 +6,19 @@ import (
 )
 
 func Load() string {
-	dbURL := os.Getenv("DATABASE_URL")
-
-	if dbURL == "" {
-		log.Fatal("DATABASE_URL not set")
-	}
-
-	return dbURL
+	return getVariable("DATABASE_URL")
 }
 
 func Port() string {
-	port := os.Getenv("SERVER_PORT")
+	return getVariable("SERVER_PORT")
+}
 
-	if port == "" {
-		log.Fatal("SERVER_PORT not set")
+func getVariable(variable string) string {
+	variableText := os.Getenv(variable)
+
+	if variableText == "" {
+		log.Fatalf("%s not set", variable)
 	}
 
-	return port
+	return variableText
 }
