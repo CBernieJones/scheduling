@@ -8,7 +8,7 @@ import (
 func RetriveUsers() ([]model.User, error) {
 	users := []model.User{}
 
-	err := db.DB.Select(&users, "SELECT userid, email, name, created_at FROM users")
+	err := db.DB.Select(&users, "SELECT userid, email, name, createdat FROM users")
 
 	return users, err
 }
