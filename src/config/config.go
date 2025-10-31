@@ -20,7 +20,7 @@ func Load() string {
 }
 
 func Port() string {
-	return fmt.Sprintf("localhost:%s", getVariable("SERVER_PORT"))
+	return getVariable("SERVER_PORT")
 }
 
 func getVariable(variable string) string {

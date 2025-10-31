@@ -13,5 +13,6 @@ func Run() error {
 
 	router := gin.Default()
 	routes.RegisterRoutes(router)
-	return router.Run(config.Port())
+	//let Gin handle the interface
+	return router.Run(":" + config.Port())
 }
